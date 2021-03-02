@@ -2,7 +2,7 @@ pragma solidity ^0.7.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract SybilPassport is ERC721 {
+contract GitcoinPassport is ERC721 {
     address public owner;
 
     constructor() ERC721("GitcoinPassport", "GPP") {

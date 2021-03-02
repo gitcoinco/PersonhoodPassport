@@ -1,9 +1,9 @@
 const { expect } = require("chai");
 
-describe("SybilPassport", function() {
+describe("GitcoinPassport", function() {
   it("Should return symbol/name", async function() {
-    const SybilPassport = await ethers.getContractFactory("SybilPassport");
-    const sp = await SybilPassport.deploy();
+    const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
+    const sp = await GitcoinPassport.deploy();
     
     await sp.deployed();
     expect(await sp.symbol()).to.equal("GPP");
@@ -12,8 +12,8 @@ describe("SybilPassport", function() {
   });
 
   it("Should return owner", async function() {
-    const SybilPassport = await ethers.getContractFactory("SybilPassport");
-    const sp = await SybilPassport.deploy();
+    const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
+    const sp = await GitcoinPassport.deploy();
     const accounts = await ethers.getSigners();
     
     await sp.deployed();
@@ -22,8 +22,8 @@ describe("SybilPassport", function() {
   });
 
   it("Test Minting", async function() {
-    const SybilPassport = await ethers.getContractFactory("SybilPassport");
-    const sp = await SybilPassport.deploy();
+    const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
+    const sp = await GitcoinPassport.deploy();
     const accounts = await ethers.getSigners();
     
     await sp.deployed();
