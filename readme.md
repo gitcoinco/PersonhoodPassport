@@ -1,4 +1,4 @@
-# GitcoinPassport
+# NFTPassport
 
 1. Install some things
 
