@@ -6,7 +6,7 @@ describe("PersonhoodPassport", function() {
     const sp = await PersonhoodPassport.deploy();
     
     await sp.deployed();
-    expect(await sp.symbol()).to.equal("GPP");
+    expect(await sp.symbol()).to.equal("PP");
     expect(await sp.name()).to.equal("PersonhoodPassport");
 
   });
@@ -30,25 +30,25 @@ describe("PersonhoodPassport", function() {
     // validate that a first passport can be created
     await sp.deployed();
     const player = accounts[1].address
-    const tokenURI = "/foo/bar/now";
+    const tokenURI = "foo/bar/now";
     const idx = 0;
     const nonce = 5;
     const hash = await sp.getMessageHash(player, 0, tokenURI, nonce);
     const signature = await accounts[0].signMessage(ethers.utils.arrayify(hash));
     await sp.connect(accounts[1]).createPassport(tokenURI, signature, nonce);
     expect(await sp.totalSupply()).to.equal(1);
-    expect(await sp.tokenURI(idx)).to.equal(tokenURI);
+    expect(await sp.tokenURI(idx)).to.equal('https://persons.proofofpersonhood.com/passport/foo/bar/now');
     var foo = await sp.tokenByIndex(idx)
 
     // validate that a second passport can be created, and txn can be sent by a diff account
     const idx_new = 1;
     const player_new = accounts[2].address
-    const tokenURI_new = "/foo/bar/now";
+    const tokenURI_new = "foo/bar/now";
     const hash_new = await sp.getMessageHash(player_new, 0, tokenURI_new, nonce);
     const signature_new = await accounts[0].signMessage(ethers.utils.arrayify(hash_new));
     await sp.connect(accounts[2]).createPassport(tokenURI_new, signature_new, nonce);
     expect(await sp.totalSupply()).to.equal(2);
-    expect(await sp.tokenURI(idx_new)).to.equal(tokenURI_new);
+    expect(await sp.tokenURI(idx_new)).to.equal('https://persons.proofofpersonhood.com/passport/foo/bar/now');
     
     // test that only Gitcoin can mint these
     try{

@@ -6,8 +6,9 @@ import "contracts/VerifySignature.sol";
 contract PersonhoodPassport is ERC721, VerifySignature {
     address public owner;
 
-    constructor() ERC721("PersonhoodPassport", "GPP") {
+    constructor() ERC721("PersonhoodPassport", "PP") {
       owner = msg.sender;
+      _setBaseURI('https://persons.proofofpersonhood.com/passport/');
     }
 
     /**
