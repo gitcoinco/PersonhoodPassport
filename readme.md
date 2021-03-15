@@ -1,4 +1,4 @@
-# GitcoinPassport
+# PersonhoodPassport
 
 1. Install some things
 

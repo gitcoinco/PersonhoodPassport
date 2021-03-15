@@ -3,15 +3,15 @@ pragma solidity ^0.7.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "contracts/VerifySignature.sol";
 
-contract GitcoinPassport is ERC721, VerifySignature {
+contract PersonhoodPassport is ERC721, VerifySignature {
     address public owner;
 
-    constructor() ERC721("GitcoinPassport", "GPP") {
+    constructor() ERC721("PersonhoodPassport", "GPP") {
       owner = msg.sender;
     }
 
     /**
-    * @dev Creates a new GitcoinPassport for player at existing address
+    * @dev Creates a new PersonhoodPassport for player at existing address
     * Passport is non transferable, and cannot be replaced
     */
   function createPassport(string memory tokenURI, bytes memory signature, uint _nonce) public returns (uint256) {
@@ -31,7 +31,7 @@ contract GitcoinPassport is ERC721, VerifySignature {
   }
 
     function noxfr() internal {
-        require(false, "GitcoinPassport's cannot be transfered, try burning this token + minting a new one.");
+        require(false, "PersonhoodPassport's cannot be transfered, try burning this token + minting a new one.");
     }
 
     function transferFrom(address from, address to, uint256 tokenId) public override {

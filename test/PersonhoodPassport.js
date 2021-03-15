@@ -1,19 +1,19 @@
 const { expect } = require("chai");
 
-describe("GitcoinPassport", function() {
+describe("PersonhoodPassport", function() {
   it("Should return symbol/name", async function() {
-    const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
-    const sp = await GitcoinPassport.deploy();
+    const PersonhoodPassport = await ethers.getContractFactory("PersonhoodPassport");
+    const sp = await PersonhoodPassport.deploy();
     
     await sp.deployed();
     expect(await sp.symbol()).to.equal("GPP");
-    expect(await sp.name()).to.equal("GitcoinPassport");
+    expect(await sp.name()).to.equal("PersonhoodPassport");
 
   });
 
   it("Should return owner", async function() {
-    const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
-    const sp = await GitcoinPassport.deploy();
+    const PersonhoodPassport = await ethers.getContractFactory("PersonhoodPassport");
+    const sp = await PersonhoodPassport.deploy();
     const accounts = await ethers.getSigners();
     
     await sp.deployed();
@@ -23,8 +23,8 @@ describe("GitcoinPassport", function() {
 
   it("Test Minting", async function() {
     // setup
-    const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
-    const sp = await GitcoinPassport.deploy();
+    const PersonhoodPassport = await ethers.getContractFactory("PersonhoodPassport");
+    const sp = await PersonhoodPassport.deploy();
     const accounts = await ethers.getSigners();
 
     // validate that a first passport can be created

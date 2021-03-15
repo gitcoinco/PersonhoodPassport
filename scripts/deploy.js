@@ -1,9 +1,9 @@
 async function main() {
   // We get the contract to deploy
-  const GitcoinPassport = await ethers.getContractFactory("GitcoinPassport");
-  const sp = await GitcoinPassport.deploy();
+  const PersonhoodPassport = await ethers.getContractFactory("PersonhoodPassport");
+  const sp = await PersonhoodPassport.deploy();
 
-  console.log("GitcoinPassport deployed to:", sp.address);
+  console.log("PersonhoodPassport deployed to:", sp.address);
 }
 
 main()
