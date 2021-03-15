@@ -42,4 +42,4 @@ npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
 
 # Already Deployed
 
-This contract is already deployed on rinkeby at [0x6d86390f9b8e4b67fb6e60f8426372fb054cc5fe](https://rinkeby.etherscan.io/address/0x6d86390f9b8e4b67fb6e60f8426372fb054cc5fe#code) and on mainnet at [0xcf553bEF97A83Eb05d3e694DA8803a2ab2466338](https://etherscan.io/address/0xcf553bEF97A83Eb05d3e694DA8803a2ab2466338), though to truly test youll have eto deploy your own where you control the owner address.
+This contract is already deployed on rinkeby at [0xcEFBf0A9Ada7A03056dD08B470AA843ef8ca5D79](https://rinkeby.etherscan.io/address/0xcEFBf0A9Ada7A03056dD08B470AA843ef8ca5D79#code) and on mainnet at [0xcf553bEF97A83Eb05d3e694DA8803a2ab2466338](https://etherscan.io/address/0xcf553bEF97A83Eb05d3e694DA8803a2ab2466338), though to truly test youll have eto deploy your own where you control the owner address.
