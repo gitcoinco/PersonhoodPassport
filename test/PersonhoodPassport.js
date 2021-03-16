@@ -37,7 +37,7 @@ describe("PersonhoodPassport", function() {
     const signature = await accounts[0].signMessage(ethers.utils.arrayify(hash));
     await sp.connect(accounts[1]).createPassport(tokenURI, signature, nonce);
     expect(await sp.totalSupply()).to.equal(1);
-    expect(await sp.tokenURI(idx)).to.equal('https://persons.proofofpersonhood.com/passport/foo/bar/now');
+    expect(await sp.tokenURI(idx)).to.equal('https://proofofpersonhood.com/passport/foo/bar/now');
     var foo = await sp.tokenByIndex(idx)
 
     // validate that a second passport can be created, and txn can be sent by a diff account
@@ -48,7 +48,7 @@ describe("PersonhoodPassport", function() {
     const signature_new = await accounts[0].signMessage(ethers.utils.arrayify(hash_new));
     await sp.connect(accounts[2]).createPassport(tokenURI_new, signature_new, nonce);
     expect(await sp.totalSupply()).to.equal(2);
-    expect(await sp.tokenURI(idx_new)).to.equal('https://persons.proofofpersonhood.com/passport/foo/bar/now');
+    expect(await sp.tokenURI(idx_new)).to.equal('https://proofofpersonhood.com/passport/foo/bar/now');
     
     // test that only Gitcoin can mint these
     try{

@@ -8,7 +8,7 @@ contract PersonhoodPassport is ERC721, VerifySignature {
 
     constructor() ERC721("PersonhoodPassport", "PP") {
       owner = msg.sender;
-      _setBaseURI('https://persons.proofofpersonhood.com/passport/');
+      _setBaseURI('https://proofofpersonhood.com/passport/');
     }
 
     /**
