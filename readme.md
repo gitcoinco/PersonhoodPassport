@@ -43,3 +43,12 @@ npx hardhat verify --network rinkeby DEPLOYED_CONTRACT_ADDRESS
 # Already Deployed
 
 This contract is already deployed on rinkeby at [0xcEFBf0A9Ada7A03056dD08B470AA843ef8ca5D79](https://rinkeby.etherscan.io/address/0xcEFBf0A9Ada7A03056dD08B470AA843ef8ca5D79#code) and on mainnet at [0xcf553bEF97A83Eb05d3e694DA8803a2ab2466338](https://etherscan.io/address/0xcf553bEF97A83Eb05d3e694DA8803a2ab2466338), though to truly test youll have eto deploy your own where you control the owner address.
+
+# Other Resources For Proof of Personhood
+- [Marketing Site](https://proofofpersonhood.com/)
+- [Marketing Site Code](https://github.com/gitcoinco/proofofpersonhood_com/)
+- [Smart Contract (NFT) Code](https://github.com/gitcoinco/PersonhoodPassport)
+- [API Clients](https://github.com/gitcoinco/pop_api)
+- [Gitcoin Trust Bonus tab](https://gitcoin.co/profile/trust)
+
+
