@@ -7,3 +7,5 @@ export const data: Writable<string> = writable('');
 
 export const SPACE_NAME = 'gitcoin';
 export const VAR_NAME = 'popp';
+
+export const ceramic: Writable<any> = writable(null);

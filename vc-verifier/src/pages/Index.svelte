@@ -1,6 +1,6 @@
 <script lang="ts">
   import Field from './Field';
-  import ThreeBox from './ThreeBox';
+  import Remote from './Remote';
   import { Divider, TabButton } from '../components';
   import { data } from '../store.ts';
 
@@ -15,7 +15,7 @@
     clear();
   };
 
-  const setThreeBox = () => {
+  const setRemote = () => {
     state = 1;
     clear();
   };
@@ -23,12 +23,12 @@
 
 <div class="flex">
   <TabButton disabled={state === 0} action={setText} text="Text" />
-  <TabButton disabled={state === 1} action={setThreeBox} text="3Box" />
+  <TabButton disabled={state === 1} action={setRemote} text="Remote" />
 </div>
 
 <Divider />
 {#if state === 0}
   <Field />
 {:else if state === 1}
-  <ThreeBox />
+  <Remote />
 {/if}

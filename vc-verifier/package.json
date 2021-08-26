@@ -1,5 +1,5 @@
 {
-  "name": "tezos-profiles",
+  "name": "popp-tools",
   "license": "Apache-2.0",
   "version": "1.0.0",
   "devDependencies": {
@@ -20,6 +20,7 @@
     "precss": "^4.0.0",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
+    "stream-browserify": "^3.0.0",
     "svelte": "^3.31.2",
     "svelte-check": "^1.0.46",
     "svelte-loader": "^3.0.0",
@@ -34,7 +35,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "didkit-wasm": "^0.1.7-tz-2"
+    "didkit-wasm": "^0.1.8"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
