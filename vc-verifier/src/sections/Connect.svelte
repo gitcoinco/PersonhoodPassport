@@ -8,9 +8,6 @@
   let localAddress = null;
   const unsubAddress = address.subscribe((address) => (localAddress = address));
 
-  let localSpace = null;
-  const unsubSpace = space.subscribe((space) => (localSpace = space));
-
   let localCeramic = null;
   const unsubCeramic = ceramic.subscribe((ceramic) => (localCeramic = ceramic));
 
@@ -21,17 +18,7 @@
     status = 'Wallet connected';
   };
 
-  const auth3Box = async () => {
-    status = 'Authenticating...';
-    const box = await Box.openBox($address, window.ethereum);
-
-    space.set(await box.openSpace(SPACE_NAME));
-
-    await $space.syncDone;
-    status = '3Box authenticated';
-  };
-
-  const authCeramic = async () => {
+  const auth = async () => {
     status = 'Authenticating...';
     ceramic.set(await Ceramic.initializeClient());
     await Ceramic.authenticateEthAddress($ceramic, $address);
@@ -40,7 +27,6 @@
 
   onDestroy(() => {
     unsubAddress();
-    unsubSpace();
     unsubCeramic();
   });
 </script>
@@ -52,13 +38,8 @@
   </div>
   <div class="flex flex-row w-full">
     <Button
-      text="Authenticate 3Box"
-      action={auth3Box}
-      disabled={localAddress === null || localSpace !== null}
-    />
-    <Button
       text="Authenticate Ceramic"
-      action={authCeramic}
+      action={auth}
       disabled={localAddress === null || localCeramic !== null}
     />
   </div>
